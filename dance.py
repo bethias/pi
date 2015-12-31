@@ -19,8 +19,6 @@ def dance():
 		pi2go.spinRight(speed)
 		time.sleep(1)
 
-pi2go.cleanup()
-
 def lights():
 	for j in range(10):
 		pi2go.setAllLEDs(0, 255, 0)
@@ -30,12 +28,10 @@ def lights():
 		pi2go.setAllLEDs(0, 0, 255)
 		time.sleep(0.5)
 		
-pi2go.cleanup()
-
 if dist	> 5: 	
 	dance()		
-elif dist < 5: 
+else: 
 	lights()
 	pi2go.spinLeft(speed)
-else:
-	pi2go.stop()	
+
+pi2go.cleanup()
